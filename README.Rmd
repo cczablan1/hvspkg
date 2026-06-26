@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(sf)
+library(hvspkg)
+```
+
+# hvspkg
+
+An R package for assessing heat vulnerability across Spanish municipalities 
+by integrating demographic data with spatial boundaries.
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install_github("cczablan1/hvspkg")
+```
+
+## Usage
+
+```{r}
+library(hvspkg)
+
+# Join population to municipalities
+muni <- join_population_to_municipalities(
+  example_municipalities,
+  example_population
+)
+
+# Create hvi_municipalities object
+hvi_muni <- new_hvi_municipalities(muni)
+print(hvi_muni)
+summary(hvi_muni)
+
+# Compute and plot the heat vulnerability index
+hvi <- compute_hvi_score(hvi_muni)
+print(hvi)
+plot(hvi)
+```
+
+## Data sources
+
+- Municipality boundaries: IGN via ArcGIS Living Atlas
+- Population by age and sex: INE
+- Province codes: INE
