@@ -42,9 +42,10 @@ join_population_to_municipalities <- function(municipalities, population) {
   }
 
   # ---- Perform the join ----
-  joined <- municipalities |>
-    dplyr::left_join(population, by = c("codine" = "INE_Code"))
-  joined <- sf::st_as_sf(joined)  
+  joined <- merge(municipalities, population,
+                by.x = "codine", by.y = "INE_Code",
+                all.x = TRUE)
+  joined <- sf::st_as_sf(joined)
 
   # ---- Report join quality ----
   # Useful diagnostic for the user; missing matches commonly stem from
