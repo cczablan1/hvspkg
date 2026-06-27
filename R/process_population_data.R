@@ -68,7 +68,7 @@ process_population_data <- function(csv_path,
   # Special case: the open-ended top age bin "100 o mas" -> "X100.o.mas"
   # If the user asked for age 100, also include that column.
   if (100 %in% c(vulnerable_young, vulnerable_old)) {
-    vulnerable_ages <- c(vulnerable_ages, "X100.o.m\u00e1s")
+    vulnerable_ages <- c(vulnerable_ages, "X100.o.mas")
   }
 
   # Keep only the columns that actually exist in the data

@@ -3,20 +3,63 @@
 \docType{data}
 \name{example_population}
 \alias{example_population}
-\title{Example population data}
+\title{Example Spanish population data}
 \format{
-A data frame with 10 rows and 4 columns:
+A data frame with 47 columns:
 \describe{
 \item{INE_Code}{INE municipality code}
 \item{Municipality}{Municipality name}
 \item{Total}{Total population}
-\item{Total_Vulnerable_Population}{Heat-vulnerable population count}
+\item{X0}{Population aged 0}
+\item{X1}{Population aged 1}
+\item{X2}{Population aged 2}
+\item{X3}{Population aged 3}
+\item{X4}{Population aged 4}
+\item{X5}{Population aged 5}
+\item{X65}{Population aged 65}
+\item{X66}{Population aged 66}
+\item{X67}{Population aged 67}
+\item{X68}{Population aged 68}
+\item{X69}{Population aged 69}
+\item{X70}{Population aged 70}
+\item{X71}{Population aged 71}
+\item{X72}{Population aged 72}
+\item{X73}{Population aged 73}
+\item{X74}{Population aged 74}
+\item{X75}{Population aged 75}
+\item{X76}{Population aged 76}
+\item{X77}{Population aged 77}
+\item{X78}{Population aged 78}
+\item{X79}{Population aged 79}
+\item{X80}{Population aged 80}
+\item{X81}{Population aged 81}
+\item{X82}{Population aged 82}
+\item{X83}{Population aged 83}
+\item{X84}{Population aged 84}
+\item{X85}{Population aged 85}
+\item{X86}{Population aged 86}
+\item{X87}{Population aged 87}
+\item{X88}{Population aged 88}
+\item{X89}{Population aged 89}
+\item{X90}{Population aged 90}
+\item{X91}{Population aged 91}
+\item{X92}{Population aged 92}
+\item{X93}{Population aged 93}
+\item{X94}{Population aged 94}
+\item{X95}{Population aged 95}
+\item{X96}{Population aged 96}
+\item{X97}{Population aged 97}
+\item{X98}{Population aged 98}
+\item{X99}{Population aged 99}
+\item{X100.o.mas}{Population aged 100 or over}
+\item{Total_Vulnerable_Population}{Heat-vulnerable population (ages 0-5 and 65+)}
 }
 }
 \usage{
 example_population
 }
 \description{
-A small synthetic population table matching \code{example_municipalities}.
+Processed population data matching \code{example_municipalities},
+produced from the INE population CSV via \code{process_population_data()}.
 }
 \keyword{datasets}
