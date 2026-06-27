@@ -20,32 +20,32 @@ muni <- join_population_to_municipalities(
   example_municipalities,
   example_population
 )
-#> Joined 10 municipalities; 0 have no matching population record.
+#> Joined 8220 municipalities; 89 have no matching population record.
 
 # Create hvi_municipalities object
 hvi_muni <- new_hvi_municipalities(muni)
 print(hvi_muni)
 #> Heat Vulnerability Municipalities
-#> Municipalities : 10 
-#> Provinces      : 4 
-#> CRS            : EPSG:4326 
-#> Vulnerable pop : 14020
+#> Municipalities : 8220 
+#> Provinces      : 53 
+#> CRS            : WGS 84 
+#> Vulnerable pop : 11662006
 summary(hvi_muni)
 #> Heat Vulnerability Municipalities - Summary
 #> -------------------------------------------
-#> Total municipalities     : 10 
-#> Provinces covered        : 4 
-#> Total population         : 88370 
-#> Total vulnerable pop     : 14020 
-#> Mean vulnerable pop      : 1402
+#> Total municipalities     : 8220 
+#> Provinces covered        : 53 
+#> Total population         : 47400798 
+#> Total vulnerable pop     : 11662006 
+#> Mean vulnerable pop      : 1434.3
 
 # Compute and plot the heat vulnerability index
 hvi <- compute_hvi_score(hvi_muni)
 print(hvi)
 #> Heat Vulnerability Index
-#> Municipalities: 10 
+#> Municipalities: 8220 
 #> Score range   : [ 0 , 1 ]
-#> Mean score    : 0.413
+#> Mean score    : 0.407
 plot(hvi)
 ```
 
