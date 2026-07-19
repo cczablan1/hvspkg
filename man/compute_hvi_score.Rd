@@ -4,15 +4,23 @@
 \alias{compute_hvi_score}
 \title{Compute a heat vulnerability index}
 \usage{
-compute_hvi_score(x)
+compute_hvi_score(x, w_lst = 0.5, w_vuln = 0.3, w_ndvi = 0.2)
 }
 \arguments{
-\item{x}{An \code{hvi_municipalities} object.}
+\item{x}{An \code{hvi_municipalities} object with \code{LST_mean} and \code{NDVI_mean}
+columns added by \code{extract_raster_to_municipalities()}.}
+
+\item{w_lst}{Numeric. Weight for LST (default 0.5).}
+
+\item{w_vuln}{Numeric. Weight for demographic vulnerability (default 0.3).}
+
+\item{w_ndvi}{Numeric. Weight for NDVI (default 0.2).}
 }
 \value{
-An object of class \code{hvi_score}.
+An object of class \code{hvi_score} with an added \code{HVI} column.
 }
 \description{
-Adds a normalised heat vulnerability score (0–1) based on the proportion
-of vulnerable population.
+Combines normalised LST, NDVI (inverted), and demographic vulnerability
+into a weighted heat vulnerability index (HVI) per municipality.
+Weights: LST 50\%, demographic vulnerability 30\%, NDVI 20\%.
 }
